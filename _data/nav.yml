@@ -7,6 +7,8 @@ main:
     url: /docs/
   - title: Services
     url: /services/
+  - title: Blog
+    url: /blog/
   - title: GitHub
     url: https://github.com/not-that-guy-again/bioAF
     external: true
