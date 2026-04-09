@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Getting Started
-description: Get up and running with bioAF in under 30 minutes.
+description: Get up and running with bioAF in minutes.
 ---
 
 Welcome to bioAF. This guide will get you from zero to a working computational biology platform on your own Google Cloud project.
