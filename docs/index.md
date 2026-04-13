@@ -119,7 +119,7 @@ Pick an email and password. This becomes the first account with full admin right
 Paste or upload the service account JSON key generated earlier:
 
 - **Scripted path:** the installer saved it to `~/Desktop/bioaf-sa-key.json` on your laptop
-- **Manual path:** you created it during the [service account step]({{ '/docs/installation/setup/#5-set-up-the-service-account' | relative_url }})
+- **Manual path:** you created it during the [service account step]({{ '/docs/installation/setup/#6-set-up-the-service-account' | relative_url }})
 
 bioAF uses this to provision the infrastructure components you enable later.
 

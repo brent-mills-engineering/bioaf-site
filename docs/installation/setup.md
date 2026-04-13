@@ -46,7 +46,32 @@ gcloud auth login
 gcloud config set project YOUR_PROJECT_ID
 ```
 
-## 3. Provision the VM
+## 3. Enable the required GCP APIs
+
+bioAF uses thirteen GCP APIs for compute, storage, IAM, logging, and related services. Enable all of them on your project (replace `YOUR_PROJECT_ID`):
+
+```bash
+PROJECT_ID=YOUR_PROJECT_ID
+
+gcloud services enable \
+  compute.googleapis.com \
+  storage.googleapis.com \
+  iam.googleapis.com \
+  cloudresourcemanager.googleapis.com \
+  pubsub.googleapis.com \
+  container.googleapis.com \
+  bigquery.googleapis.com \
+  artifactregistry.googleapis.com \
+  cloudbuild.googleapis.com \
+  secretmanager.googleapis.com \
+  serviceusage.googleapis.com \
+  logging.googleapis.com \
+  --project="$PROJECT_ID"
+```
+
+This can take a minute. You won't be able to create the VM or service account below until the APIs are enabled.
+
+## 4. Provision the VM
 
 ```bash
 gcloud compute instances create bioaf \
@@ -60,7 +85,7 @@ gcloud compute instances create bioaf \
 
 Adjust `--zone` if you'd rather run closer to your team. See [Compute Engine regions and zones](https://cloud.google.com/compute/docs/regions-zones) for the full list.
 
-## 4. Set up the firewall rule
+## 5. Set up the firewall rule
 
 ```bash
 gcloud compute firewall-rules create bioaf-allow-web \
@@ -73,7 +98,7 @@ gcloud compute firewall-rules create bioaf-allow-web \
 
 This opens HTTP and HTTPS to your VM. For details on tightening the source ranges, see [VPC firewall rules](https://cloud.google.com/firewall/docs/firewalls).
 
-## 5. Set up the service account
+## 6. Set up the service account
 
 Create the service account bioAF will use to provision its own resources:
 
@@ -82,13 +107,27 @@ gcloud iam service-accounts create bioaf-app \
   --display-name="bioAF Application"
 ```
 
-Grant it the roles it needs (replace `YOUR_PROJECT_ID`):
+Grant it the thirteen roles the bioAF setup wizard expects (replace `YOUR_PROJECT_ID`):
 
 ```bash
 PROJECT_ID=YOUR_PROJECT_ID
 SA_EMAIL="bioaf-app@${PROJECT_ID}.iam.gserviceaccount.com"
 
-for role in roles/editor roles/iam.securityAdmin roles/iam.serviceAccountTokenCreator; do
+for role in \
+  roles/storage.admin \
+  roles/pubsub.admin \
+  roles/container.admin \
+  roles/iam.serviceAccountUser \
+  roles/iam.serviceAccountAdmin \
+  roles/compute.admin \
+  roles/resourcemanager.projectIamAdmin \
+  roles/bigquery.dataEditor \
+  roles/artifactregistry.admin \
+  roles/cloudbuild.builds.editor \
+  roles/logging.logWriter \
+  roles/serviceusage.serviceUsageViewer \
+  roles/viewer
+do
   gcloud projects add-iam-policy-binding "$PROJECT_ID" \
     --member="serviceAccount:${SA_EMAIL}" \
     --role="$role"
@@ -104,9 +143,7 @@ gcloud iam service-accounts keys create ~/Desktop/bioaf-sa-key.json \
 
 {% include info-bubble.html title="Keep that key file safe" content="The JSON key gives whoever holds it full access to your GCP project. Don't commit it to GitHub, share it over email, or leave it in a public location. Store it in a password manager or a secure folder on your machine." %}
 
-{% include info-bubble.html title="Why these three roles?" content="<strong>Editor</strong> lets bioAF create and manage most GCP resources. <strong>Security Admin</strong> lets it manage IAM policies for the infrastructure it provisions. <strong>Service Account Token Creator</strong> lets it mint short-lived credentials. bioAF will tell you if additional permissions are needed for features you enable." %}
-
-## 6. SSH to the VM
+## 7. SSH to the VM
 
 The easiest option is the gcloud CLI:
 
@@ -141,7 +178,7 @@ Once you're SSH'd in, the rest is identical to the scripted path. Follow **[Inst
 
 ## Troubleshooting
 
-**"Docker is not running"** — Make sure the Docker daemon is started before running `./bioaf setup`. On a fresh GCP VM this should already be handled by the install commands in step 6.
+**"Docker is not running"** — Make sure the Docker daemon is started before running `./bioaf setup`. On a fresh GCP VM this should already be handled by the install commands in step 7.
 
 **"Port 443 is already in use"** — Another application is using port 443. Stop it, or edit `docker/.env` to change the port.
 
