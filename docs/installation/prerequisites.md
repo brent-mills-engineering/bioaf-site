@@ -1,40 +1,40 @@
 ---
 layout: docs
 title: Prerequisites
-description: What you need before installing bioAF.
+description: What you need before manually installing bioAF on Google Cloud.
 ---
 
-## Cloud VM required
+This page covers prerequisites for the **manual install** path. If you're using the [scripted installer]({{ '/docs/' | relative_url }}), it takes care of most of this for you.
 
-bioAF must be deployed on a Google Cloud virtual machine — **it cannot be run on your local machine** (Mac, Windows, or Linux desktop). If you haven't set up a GCP VM yet, start with the [Deploying on Google Cloud]({{ '/docs/installation/gcp-setup/' | relative_url }}) guide.
+The manual path runs `gcloud` commands from your laptop, so you'll need the [gcloud CLI](https://cloud.google.com/sdk/docs/install) installed and authenticated. [Setup & Deploy]({{ '/docs/installation/setup/#2-set-up-the-gcloud-cli' | relative_url }}) walks through that.
 
-All commands below should be run on your VM, not your laptop.
+## 1. A Google Cloud account
 
-## Required software
+You'll need an account on Google Cloud Platform. If you don't have one:
 
-| Tool | Minimum version | What it's for |
-|------|----------------|---------------|
-| **Git** | 2.x | Cloning the bioAF repository |
-| **Docker** | 20.x | Running the platform containers |
-| **Docker Compose** | v2.x | Orchestrating the services |
+- Sign up at [cloud.google.com](https://cloud.google.com)
+- Click **Get started for free** — new accounts get a free trial credit
 
-{% include info-bubble.html title="How do I check my versions?" content="Run `git --version`, `docker --version`, and `docker compose version` in your terminal. If any of these aren't installed, your IT team or system administrator can help — they're standard tools available on Mac, Windows, and Linux." %}
+## 2. A billing account linked to your GCP project
 
-## Google Cloud Platform
+Google requires a billing account with a payment method on file before it will provision infrastructure. If you don't already have one:
 
-You'll need a GCP project with billing enabled. bioAF provisions infrastructure in your project, so you maintain full ownership of your data and compute.
+- [Create a billing account](https://console.cloud.google.com/billing/create) in the GCP Console
+- See [Google's guide to creating a billing account](https://cloud.google.com/billing/docs/how-to/create-billing-account) if you need details
 
-- A GCP project (new or existing)
-- Billing enabled on the project
-- The `gcloud` CLI installed and authenticated
+Link the billing account to whichever GCP project you intend to deploy bioAF into.
 
-{% include info-bubble.html title="What is GCP?" content="Google Cloud Platform is Google's cloud computing service. It provides the servers, storage, and networking that bioAF uses to run your pipelines and store your data. You pay Google directly for what you use — bioAF itself is free." %}
+{% include info-bubble.html title="Why do I need a credit card for free software?" content="bioAF is free. But it runs on Google's servers, which aren't free. You pay Google directly for the compute, storage, and database resources bioAF uses. Google requires a payment method on file before they'll provision any infrastructure." %}
 
-## What you'll need on hand
+## 3. Project ID, region, and account access
 
-- A GCP project ID (looks like `my-project-123456`)
-- An email address for the admin account
-- About 30 minutes
+Before you start, have these ready:
+
+- Your **GCP project ID** (looks like `bioaf-prod-123456`)
+- Your **desired region** (e.g., `us-central1` — pick one close to your team)
+- A Google account with permission to create **VM instances**, **firewall rules**, and **service accounts** in the project
+
+The account you authenticate `gcloud` as needs at least the **Compute Admin**, **Service Account Admin**, and **Security Admin** roles — or a broader role like **Owner** or **Editor** combined with **Security Admin**.
 
 ## Expected cloud costs
 

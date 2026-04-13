@@ -4,7 +4,7 @@ title: Post-Setup
 description: What to do after installing bioAF — enable components and invite your team.
 ---
 
-Once bioAF is running and you've logged in as admin, there are a few things to set up before your team starts using the platform.
+Once bioAF is running and you've pasted the one-time setup code from `./bioaf setup` into the web UI to create your admin account, there are a few things to set up before your team starts using the platform.
 
 ## Enable platform components
 

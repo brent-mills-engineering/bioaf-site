@@ -26,7 +26,7 @@ Google Cloud Platform (GCP) today. bioAF's architecture uses an adapter layer th
 
 ### How long does setup take?
 
-About 30 minutes from clone to running platform. Run `./install.sh` first to check prerequisites and generate configuration, then `./bioaf setup` handles the rest interactively.
+About 30 minutes end-to-end. One command on your desktop (`curl ... install-gcp.sh | bash`) provisions the VM, then `./bioaf setup` on the VM handles prerequisites, configuration, builds, and migrations. See the [Getting Started guide]({{ '/docs/' | relative_url }}) for the full flow.
 
 ### Can I use an existing GCP project?
 
@@ -34,11 +34,11 @@ Yes. bioAF provisions resources in whatever GCP project you point it at. It won'
 
 ### Can I run bioAF on my laptop?
 
-No. bioAF must be deployed on a Google Cloud virtual machine — it will not work on a local machine (Mac, Windows, or Linux desktop). Follow the [Deploying on Google Cloud]({{ '/docs/installation/gcp-setup/' | relative_url }}) guide to set up a VM first.
+No. bioAF must be deployed on a Google Cloud virtual machine — it will not work on a local machine (Mac, Windows, or Linux desktop). Follow the [Getting Started]({{ '/docs/' | relative_url }}) guide to set up a VM first.
 
 ### What are the hardware requirements?
 
-bioAF runs on a GCP VM (`e2-standard-2` or larger). The actual pipeline compute happens on GCP as well, so you don't need a powerful local machine — just a browser to SSH into your VM.
+bioAF runs on a GCP VM (`e2-medium` or larger). The actual pipeline compute happens on GCP as well, so you don't need a powerful local machine — just a browser, a terminal, and an SSH client.
 
 ### How much does the GCP infrastructure cost?
 

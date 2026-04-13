@@ -22,16 +22,17 @@ All commands are run from the root of your bioAF installation:
 ./bioaf setup
 ```
 
-The interactive first-time setup wizard. Prompts for your organization name, admin email, and admin password, then:
+The first-time setup command. It's idempotent — safe to re-run. It:
 
-- Generates a secure `.env` configuration file
+- Checks prerequisites (Docker, Git, Docker Compose)
+- Generates a secure `docker/.env` file if one doesn't exist
 - Provisions TLS certificates
 - Builds all container images
 - Starts all services
 - Runs database migrations
-- Creates the initial admin account
+- Mints a **one-time setup code** and prints it along with the URL of the setup wizard
 
-Run this once when you first install bioAF. For subsequent installs or to create additional admin accounts, use `create-admin`.
+Open the URL in your browser (usually `https://<vm-ip>/setup`) and paste the code to create your first admin account. The code expires in one hour and is invalidated once the first admin exists. If it expires, re-run `./bioaf setup` to mint a new one.
 
 ### `create-admin`
 
@@ -39,7 +40,7 @@ Run this once when you first install bioAF. For subsequent installs or to create
 ./bioaf create-admin
 ```
 
-Creates a new admin user account interactively. Services must already be running. Prompts for organization name, email, and password.
+Creates an additional admin user account interactively. Use this after the first admin has been created via the one-time setup code. Services must already be running. Prompts for organization name, email, and password.
 
 ---
 
@@ -140,14 +141,6 @@ Creates a compressed database backup (`pg_dump`) and uploads it to the `bioaf-ba
 
 Run this before major updates or any operation that modifies data.
 
-### `seed`
-
-```bash
-./bioaf seed <script.py>
-```
-
-Runs a data script inside the backend container. Used to load demo data or perform one-off data operations. Running `./bioaf seed` without a script name lists available scripts.
-
 ### `reset-db`
 
 ```bash
@@ -213,16 +206,35 @@ Scans GCS for pipeline output files and registers them in the database. Normally
 
 ```bash
 ./bioaf update
+./bioaf update <version>
+./bioaf update <version> --yes
 ```
 
-Updates bioAF to the latest version in one step:
+Updates bioAF to a specific version (or the latest GitHub release if omitted). In one step it:
 
-1. Pulls the latest code from GitHub
-2. Rebuilds container images
-3. Restarts services
-4. Runs any new database migrations
+1. Takes a database backup (written to `backups/bioaf_pre_update_<from>_to_<to>_<timestamp>.sql.gz`)
+2. Fetches tags and checks out `v<version>`
+3. Rebuilds container images
+4. Restarts services
+5. Runs any new database migrations
+6. Records progress in `update-status/current.json` so the web UI can display it in real time
 
-Run `./bioaf backup` before updating.
+| Argument | Description |
+|----------|-------------|
+| `<version>` | Target version in `X.Y.Z` form (leading `v` is accepted). Omit to fetch the latest release. |
+| `--yes` | Skip the confirmation prompt. Useful for scripts and the in-UI upgrade flow. |
+| `BIOAF_AUTO_CONFIRM=1` (env var) | Same effect as `--yes`. |
+
+**Examples:**
+
+```bash
+./bioaf update                  # Update to the latest release
+./bioaf update 0.7.0            # Update to a specific version
+./bioaf update 0.7.0 --yes      # Non-interactive (CI or scripts)
+BIOAF_AUTO_CONFIRM=1 ./bioaf update 0.7.0
+```
+
+Updates always take a database backup before anything else, so rolling back is a matter of checking out the previous tag and restoring the backup.
 
 ### `help`
 

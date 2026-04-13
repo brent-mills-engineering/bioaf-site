@@ -14,14 +14,12 @@ main:
     external: true
 
 docs_sidebar:
-  - title: Getting Started
+  - title: Quick Start
     url: /docs/
-  - title: Installation
+  - title: Manual Installation
     items:
       - title: Prerequisites
         url: /docs/installation/prerequisites/
-      - title: Deploying on Google Cloud (GCE)
-        url: /docs/installation/gcp-setup/
       - title: Setup & Deploy
         url: /docs/installation/setup/
       - title: Post-Setup

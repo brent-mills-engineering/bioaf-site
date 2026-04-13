@@ -15,7 +15,7 @@ description: bioAF is a free, open source platform that gives small biotech team
       no infrastructure engineer required.
     </p>
     <div class="hero-cta">
-      <a href="{{ '/docs/installation/setup/' | relative_url }}" class="btn btn-primary">Get Started</a>
+      <a href="{{ '/docs/' | relative_url }}" class="btn btn-primary">Get Started</a>
       <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
     </div>
   </div>
@@ -187,8 +187,8 @@ description: bioAF is a free, open source platform that gives small biotech team
       <div class="workflow-step">
         <div class="step-number">1</div>
         <h3>Deploy</h3>
-        <p>Clone the repo and run one command. bioAF sets up everything you need on your Google Cloud project.</p>
-        {% include info-bubble.html title="What happens under the hood?" content="bioAF uses Terraform to provision a Kubernetes cluster, managed database, and storage buckets on your GCP project. You don't need to know what any of that means &mdash; the setup command handles it all." %}
+        <p>Run one command on your desktop to provision a GCP VM, then one command on the VM to install bioAF. Paste the one-time setup code it prints into the web UI to create your admin account.</p>
+        {% include info-bubble.html title="What happens under the hood?" content="The desktop installer sets up the gcloud CLI, creates a VM, firewall rules, and service account. Then <code>./bioaf setup</code> on the VM builds the containers, runs migrations, starts the services, and prints a one-time setup code that proves you have admin access to the instance." %}
       </div>
       <div class="workflow-step">
         <div class="step-number">2</div>
@@ -268,7 +268,7 @@ description: bioAF is a free, open source platform that gives small biotech team
         bioAF is open source software. Deploy it on your own cloud project and own your data,
         your infrastructure, and your results. No vendor lock-in, no per-seat fees.
       </p>
-      <a href="{{ '/docs/installation/setup/' | relative_url }}" class="btn btn-primary">Get Started</a>
+      <a href="{{ '/docs/' | relative_url }}" class="btn btn-primary">Get Started</a>
     </div>
   </div>
 </section>
