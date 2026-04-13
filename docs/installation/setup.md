@@ -85,6 +85,8 @@ gcloud compute instances create bioaf \
 
 Adjust `--zone` if you'd rather run closer to your team. See [Compute Engine regions and zones](https://cloud.google.com/compute/docs/regions-zones) for the full list.
 
+{% include info-bubble.html variant="warning" title="Known current limitations" content="<ul><li><strong>us-central1</strong> is known to work.</li><li><strong>us-west1</strong> has an aggressive quota that blocks automated deployment — you'll need to contact Google to raise your quota first.</li><li>Cross-region deployments are currently a beta feature.</li></ul>" %}
+
 ## 5. Set up the firewall rule
 
 ```bash

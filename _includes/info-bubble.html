@@ -1,6 +1,6 @@
-<details class="info-bubble">
+<details class="info-bubble{% if include.variant %} info-bubble--{{ include.variant }}{% endif %}">
   <summary>
-    <span class="info-icon">i</span>
+    <span class="info-icon">{% if include.variant == "warning" %}!{% else %}i{% endif %}</span>
     {{ include.title }}
   </summary>
   <div class="info-content">
