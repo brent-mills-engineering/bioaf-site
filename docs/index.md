@@ -17,8 +17,6 @@ This is the fastest path to a running bioAF. If you'd rather click through the G
 
 ## Quick start
 
-{% include info-bubble.html variant="warning" title="Known current limitations" content="<ul><li><strong>us-central1</strong> is known to work.</li><li><strong>us-west1</strong> has an aggressive quota that blocks automated deployment — you'll need to contact Google to raise your quota first.</li><li>Cross-region deployments are currently a beta feature.</li></ul>" %}
-
 Pick your operating system:
 
 <div class="os-tabs" role="tablist">
