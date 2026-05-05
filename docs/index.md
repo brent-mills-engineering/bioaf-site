@@ -17,6 +17,8 @@ This is the fastest path to a running bioAF. If you'd rather click through the G
 
 ## Quick start
 
+Before running the installer, make sure you've completed the <a href="{{ '/docs/installation/prerequisites/' | relative_url }}" target="_blank" rel="noopener">Prerequisites</a> (Google account, Google Cloud project, billing).
+
 Pick your operating system:
 
 <div class="os-tabs" role="tablist">
@@ -31,7 +33,7 @@ Run this in your terminal:
 
 <div class="install-block">
   <div class="install-box">
-    <code id="install-cmd-macos">curl -fsSL https://raw.githubusercontent.com/not-that-guy-again/bioAF/main/install-gcp.sh | bash</code>
+    <code id="install-cmd-macos">bash &lt;(curl -fsSL https://raw.githubusercontent.com/not-that-guy-again/bioAF/main/install-gcp.sh)</code>
     <button type="button" class="install-copy" data-copy-target="install-cmd-macos" aria-label="Copy install command">Copy</button>
   </div>
   <p class="install-note">
@@ -47,7 +49,7 @@ Run this in your terminal:
 
 <div class="install-block">
   <div class="install-box">
-    <code id="install-cmd-linux">curl -fsSL https://raw.githubusercontent.com/not-that-guy-again/bioAF/main/install-gcp.sh | bash</code>
+    <code id="install-cmd-linux">bash &lt;(curl -fsSL https://raw.githubusercontent.com/not-that-guy-again/bioAF/main/install-gcp.sh)</code>
     <button type="button" class="install-copy" data-copy-target="install-cmd-linux" aria-label="Copy install command">Copy</button>
   </div>
   <p class="install-note">
@@ -119,7 +121,7 @@ Pick an email and password. This becomes the first account with full admin right
 Paste or upload the service account JSON key generated earlier:
 
 - **Scripted path:** the installer saved it to `~/Desktop/bioaf-sa-key.json` on your laptop
-- **Manual path:** you created it during the [service account step]({{ '/docs/installation/setup/#6-set-up-the-service-account' | relative_url }})
+- **Manual path:** you created it during the [service account step]({{ '/docs/installation/setup/#5-set-up-the-service-account' | relative_url }})
 
 bioAF uses this to provision the infrastructure components you enable later.
 

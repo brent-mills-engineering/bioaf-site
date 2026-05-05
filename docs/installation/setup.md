@@ -4,25 +4,17 @@ title: Setup & Deploy
 description: Manual install steps for users who prefer to click through GCP themselves.
 ---
 
-This page covers the manual path: creating a GCP project, installing the `gcloud` CLI, provisioning a VM, and setting up firewall rules and a service account by hand. Use this if the scripted installer on [Quick Start]({{ '/docs/' | relative_url }}) isn't an option (for example, you're on Windows, or you have an existing project with custom IAM).
+This page covers the manual path: installing the `gcloud` CLI, provisioning a VM, and setting up firewall rules and a service account by hand. Use this if the scripted installer on [Quick Start]({{ '/docs/' | relative_url }}) isn't an option (for example, you're on Windows, or you have an existing project with custom IAM).
 
 Both paths converge once you're SSH'd into the VM. See **[Install bioAF on the VM](#install-bioaf-on-the-vm)** at the bottom of this page.
 
-{% include info-bubble.html title="You'll only need to do this once" content="These steps create a GCP project, a VM, a firewall rule, and a service account, then install bioAF on the VM. They produce the same result as the scripted installer." %}
+{% include info-bubble.html title="You'll only need to do this once" content="These steps provision a VM, a firewall rule, and a service account in your GCP project, then install bioAF on the VM. They produce the same result as the scripted installer." %}
 
 ---
 
-## 1. Set up GCP
+Before you start, complete the <a href="{{ '/docs/installation/prerequisites/' | relative_url }}" target="_blank" rel="noopener">Prerequisites</a> (Google account, Google Cloud project, billing). Have your **Project ID** handy — the steps below reference it.
 
-1. Go to [cloud.google.com](https://cloud.google.com) and click **Get started for free** (or sign in if you already have an account). New accounts get a free trial credit.
-2. In the [GCP Console](https://console.cloud.google.com), open the menu (&#9776;) → **Billing** → **Add billing account** and attach a payment method.
-3. Click the project dropdown at the top → **New Project** → name it (e.g., `bioaf-prod`), attach your billing account, and click **Create**.
-
-Write down the **Project ID** (e.g., `bioaf-prod-123456`). You'll need it in the next step.
-
-{% include info-bubble.html title="Why do I need a credit card for free software?" content="bioAF is free. But it runs on Google's servers, which aren't free. You pay Google directly for the compute, storage, and database resources bioAF uses. Google requires a payment method on file before they'll provision any infrastructure." %}
-
-## 2. Set up the gcloud CLI
+## 1. Set up the gcloud CLI
 
 **macOS:**
 
@@ -46,7 +38,7 @@ gcloud auth login
 gcloud config set project YOUR_PROJECT_ID
 ```
 
-## 3. Enable the required GCP APIs
+## 2. Enable the required GCP APIs
 
 bioAF uses thirteen GCP APIs for compute, storage, IAM, logging, and related services. Enable all of them on your project (replace `YOUR_PROJECT_ID`):
 
@@ -71,7 +63,7 @@ gcloud services enable \
 
 This can take a minute. You won't be able to create the VM or service account below until the APIs are enabled.
 
-## 4. Provision the VM
+## 3. Provision the VM
 
 ```bash
 gcloud compute instances create bioaf \
@@ -85,7 +77,7 @@ gcloud compute instances create bioaf \
 
 Adjust `--zone` if you'd rather run closer to your team. See [Compute Engine regions and zones](https://cloud.google.com/compute/docs/regions-zones) for the full list.
 
-## 5. Set up the firewall rule
+## 4. Set up the firewall rule
 
 ```bash
 gcloud compute firewall-rules create bioaf-allow-web \
@@ -98,7 +90,7 @@ gcloud compute firewall-rules create bioaf-allow-web \
 
 This opens HTTP and HTTPS to your VM. For details on tightening the source ranges, see [VPC firewall rules](https://cloud.google.com/firewall/docs/firewalls).
 
-## 6. Set up the service account
+## 5. Set up the service account
 
 Create the service account bioAF will use to provision its own resources:
 
@@ -143,7 +135,7 @@ gcloud iam service-accounts keys create ~/Desktop/bioaf-sa-key.json \
 
 {% include info-bubble.html title="Keep that key file safe" content="The JSON key gives whoever holds it full access to your GCP project. Don't commit it to GitHub, share it over email, or leave it in a public location. Store it in a password manager or a secure folder on your machine." %}
 
-## 7. SSH to the VM
+## 6. SSH to the VM
 
 The easiest option is the gcloud CLI:
 
@@ -178,7 +170,7 @@ Once you're SSH'd in, the rest is identical to the scripted path. Follow **[Inst
 
 ## Troubleshooting
 
-**"Docker is not running"** — Make sure the Docker daemon is started before running `./bioaf setup`. On a fresh GCP VM this should already be handled by the install commands in step 7.
+**"Docker is not running"** — Make sure the Docker daemon is started before running `./bioaf setup`. On a fresh GCP VM this should already be handled by the install commands in step 6.
 
 **"Port 443 is already in use"** — Another application is using port 443. Stop it, or edit `docker/.env` to change the port.
 
