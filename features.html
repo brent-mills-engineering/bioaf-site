@@ -30,25 +30,27 @@ description: A complete platform for computational biology — from sample regis
     <div class="feature-page-card">
       <div class="feature-page-icon">&#x2699;&#xfe0f;</div>
       <h2>Pipeline Engine</h2>
-      <p class="feature-page-tagline">Run bioinformatics workflows without managing compute infrastructure.</p>
+      <p class="feature-page-tagline">Run bioinformatics workflows without managing compute infrastructure &mdash; and author your own when the catalog isn't enough.</p>
       <ul>
         <li>Pre-configured nf-core pipelines &mdash; scRNA-seq, bulk RNA-seq, ATAC-seq, and more</li>
         <li>One-click launch with parameter overrides</li>
         <li>Real-time DAG visualization and log streaming per stage</li>
-        <li>Outputs automatically stored and linked back to the originating experiment</li>
+        <li>Custom pipelines run any program that runs on Linux &mdash; bash, Python, R, or arbitrary tools</li>
+        <li>Develop in Work Nodes, then promote to a versioned pipeline backed by a GitHub repo or pasted script</li>
+        <li>Custom QC dashboards driven by your own metrics, with full provenance from inputs to outputs</li>
       </ul>
       <a href="{{ '/docs/features/pipelines/' | relative_url }}" class="feature-page-link">Deep dive &rarr;</a>
     </div>
 
     <div class="feature-page-card">
       <div class="feature-page-icon">&#x1f4d3;</div>
-      <h2>Notebook Sessions</h2>
-      <p class="feature-page-tagline">Interactive analysis in JupyterHub or RStudio &mdash; in your browser, no local setup required.</p>
+      <h2>Notebook Sessions &amp; Work Nodes</h2>
+      <p class="feature-page-tagline">Interactive analysis in your browser &mdash; or a full Linux VM when you need to bring your own tools.</p>
       <ul>
         <li>JupyterHub for Python, RStudio Server for R</li>
+        <li>Work Nodes: full Linux VMs with SSH, conda environments, and your GitHub repos pre-cloned</li>
         <li>Versioned environments built from a Dockerfile or conda spec</li>
         <li>Auto-stop on idle to eliminate unnecessary cloud spend</li>
-        <li>Browser-based terminal access to any running session</li>
       </ul>
       <a href="{{ '/docs/features/notebooks/' | relative_url }}" class="feature-page-link">Deep dive &rarr;</a>
     </div>
@@ -84,6 +86,7 @@ description: A complete platform for computational biology — from sample regis
       <h2>Cost Center</h2>
       <p class="feature-page-tagline">Real-time cloud spending visibility without needing to navigate the GCP console.</p>
       <ul>
+        <li>Components auto-scale to control cost when not in use</li>
         <li>Per-component and per-project spend breakdowns</li>
         <li>Trend charts with month-to-date projections</li>
         <li>Budget alerts at 50%, 80%, and 100% of your threshold</li>
