@@ -180,4 +180,4 @@ Once you're SSH'd in, the rest is identical to the scripted path. Follow **[Inst
 
 **Lost the setup code** — Re-run `./bioaf setup`. It mints a fresh code as long as no admin account has been created yet.
 
-If you run into other issues, check the [FAQ]({{ '/docs/faq/' | relative_url }}) or [open an issue on GitHub](https://github.com/not-that-guy-again/bioAF/issues).
+If you run into other issues, check the [FAQ]({{ '/docs/faq/' | relative_url }}) or [open an issue on GitHub](https://github.com/bioAF/bioAF/issues).

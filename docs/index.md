@@ -33,7 +33,7 @@ Run this in your terminal:
 
 <div class="install-block">
   <div class="install-box">
-    <code id="install-cmd-macos">bash &lt;(curl -fsSL https://raw.githubusercontent.com/not-that-guy-again/bioAF/main/install-gcp.sh)</code>
+    <code id="install-cmd-macos">bash &lt;(curl -fsSL https://raw.githubusercontent.com/bioAF/bioAF/main/install-gcp.sh)</code>
     <button type="button" class="install-copy" data-copy-target="install-cmd-macos" aria-label="Copy install command">Copy</button>
   </div>
   <p class="install-note">
@@ -49,7 +49,7 @@ Run this in your terminal:
 
 <div class="install-block">
   <div class="install-box">
-    <code id="install-cmd-linux">bash &lt;(curl -fsSL https://raw.githubusercontent.com/not-that-guy-again/bioAF/main/install-gcp.sh)</code>
+    <code id="install-cmd-linux">bash &lt;(curl -fsSL https://raw.githubusercontent.com/bioAF/bioAF/main/install-gcp.sh)</code>
     <button type="button" class="install-copy" data-copy-target="install-cmd-linux" aria-label="Copy install command">Copy</button>
   </div>
   <p class="install-note">
@@ -77,7 +77,7 @@ Once you're SSH'd in, clone the repo and run setup.
 
 <div class="install-block">
   <div class="install-box">
-    <code id="clone-cmd">git clone https://github.com/not-that-guy-again/bioAF.git</code>
+    <code id="clone-cmd">git clone https://github.com/bioAF/bioAF.git</code>
     <button type="button" class="install-copy" data-copy-target="clone-cmd" aria-label="Copy clone command">Copy</button>
   </div>
 </div>

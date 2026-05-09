@@ -80,7 +80,7 @@ Click **Check for updates** in **Settings > Information** to see if a new versio
 
 ### Where do I report bugs?
 
-Open an issue on [GitHub](https://github.com/not-that-guy-again/bioAF/issues).
+Open an issue on [GitHub](https://github.com/bioAF/bioAF/issues).
 
 ### Is professional support available?
 

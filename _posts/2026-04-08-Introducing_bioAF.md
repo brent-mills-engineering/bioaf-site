@@ -31,6 +31,6 @@ Bioinformaticians and computational biologists are brilliant. But they aren't in
 
 bioAF doesn't invent new tools. It wires together Kubernetes, Terraform, PostgreSQL, and GCS so your team never has to touch any of them directly. It offloads the infrastructure work and lets your team focus on the science.
 
-The source is open. The tool works today. Check it out on [bioAF.co](https://bioaf.co) or on [Github](https://github.com/not-that-guy-again/bioAF).
+The source is open. The tool works today. Check it out on [bioAF.co](https://bioaf.co) or on [Github](https://github.com/bioAF/bioAF).
 
 Could this help your lab or company get to results faster? I'd love to hear what's slowing you down.

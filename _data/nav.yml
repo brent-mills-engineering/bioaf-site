@@ -10,7 +10,7 @@ main:
   - title: Blog
     url: /blog/
   - title: GitHub
-    url: https://github.com/not-that-guy-again/bioAF
+    url: https://github.com/bioAF/bioAF
     external: true
 
 docs_sidebar:
