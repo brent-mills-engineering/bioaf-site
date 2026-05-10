@@ -65,7 +65,7 @@ A Windows installer is not available at this time. Follow the [manual install st
 
 </div>
 
-When the script finishes, it prints the SSH command to connect to your new VM and the path to a service account JSON key (saved on your Desktop). Keep both handy.
+When the script finishes, it prints the SSH command to connect to your new VM. The installer attaches a scoped service account (`bioaf-app`) directly to the VM, so no JSON key is downloaded or stored on your laptop.
 
 ---
 
@@ -116,14 +116,9 @@ The code was printed on the VM's console by `./bioaf setup`. Pasting it proves y
 
 Pick an email and password. This becomes the first account with full admin rights.
 
-### 3. Upload your GCP credentials
+### 3. Confirm your GCP identity
 
-Paste or upload the service account JSON key generated earlier:
-
-- **Scripted path:** the installer saved it to `~/Desktop/bioaf-sa-key.json` on your laptop
-- **Manual path:** you created it during the [service account step]({{ '/docs/installation/setup/#5-set-up-the-service-account' | relative_url }})
-
-bioAF uses this to provision the infrastructure components you enable later.
+The wizard auto-detects the service account attached to the VM (`bioaf-app`) and pre-populates your project, region, and the `bioaf-bootstrap` SA email from the VM's metadata. Confirm the values look right and continue. No JSON key is needed for either the scripted or [manual path]({{ '/docs/installation/setup/#4-create-the-service-accounts' | relative_url }}); the runtime impersonates `bioaf-bootstrap` for broader operations using short-lived tokens.
 
 ### 4. Configure SMTP (optional)
 
