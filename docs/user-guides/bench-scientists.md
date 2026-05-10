@@ -4,7 +4,7 @@ title: Guide for Bench Scientists
 description: How to register experiments, upload data, and view results in bioAF.
 ---
 
-This guide covers the day-to-day workflow for bench scientists using bioAF. Everything here happens in your web browser — no command line or coding required.
+This guide covers the day-to-day workflow for bench scientists using bioAF. Everything here happens in your web browser, no command line or coding required.
 
 ## Registering an experiment
 
@@ -50,7 +50,7 @@ Once a pipeline has run on your experiment:
 
 ### QC dashboards
 
-Navigate to **Results > QC** on your experiment page. The QC dashboard shows quality metrics for your sequencing run — cell counts, read depth, mapping rates, and more.
+Navigate to **Results > QC** on your experiment page. The QC dashboard shows quality metrics for your sequencing run, cell counts, read depth, mapping rates, and more.
 
 <img src="{{ '/assets/images/screenshot-qc-dashboard.png' | relative_url }}" alt="QC dashboard showing cell counts, read depth, and quality metrics" class="screenshot-img">
 
@@ -67,7 +67,7 @@ Click **View in cellxgene** to open an interactive explorer for your single-cell
 
 ### Downloading results
 
-From the **Data** tab, you can browse and download any output files — count matrices, processed h5ad files, plots, and reports.
+From the **Data** tab, you can browse and download any output files, count matrices, processed h5ad files, plots, and reports.
 
 ## Getting notifications
 

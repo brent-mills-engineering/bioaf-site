@@ -15,7 +15,7 @@ Every experiment in bioAF captures MINSEQE-compliant metadata:
 - Experimental conditions and treatments
 - Library preparation details
 
-This metadata travels with your data through every step — from sample registration to pipeline execution to final results — so nothing is lost.
+This metadata travels with your data through every step (from sample registration to pipeline execution to final results), so nothing is lost.
 
 ## Sample management
 

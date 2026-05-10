@@ -9,7 +9,7 @@ description: Consulting, deployment, and support services for bioAF from the per
 
   <div class="services-hero">
     <h1>Work with me</h1>
-    <p>bioAF is free and open source. If your team needs help getting it deployed, extended, or maintained, We offer a range of services — from a single advisory call to an ongoing support relationship.</p>
+    <p>bioAF is free and open source. If your team needs help getting it deployed, extended, or maintained, we offer a range of services, from a single advisory call to an ongoing support relationship.</p>
     <a href="mailto:hello@bioaf.co" class="btn btn-primary">Get in touch &rarr;</a>
   </div>
 
@@ -18,7 +18,7 @@ description: Consulting, deployment, and support services for bioAF from the per
     <div class="service-card">
       <div class="service-icon">&#x1f4cb;</div>
       <h2>Technical Advisory</h2>
-      <p>Not sure if bioAF is the right fit for your team? Want a second opinion on your infrastructure approach? I'll review your current setup, understand your goals, and give you honest, direct guidance — no sales pitch.</p>
+      <p>Not sure if bioAF is the right fit for your team? Want a second opinion on your infrastructure approach? I'll review your current setup, understand your goals, and give you honest, direct guidance, no sales pitch.</p>
       <ul>
         <li>Architecture reviews</li>
         <li>Cloud cost assessments</li>
@@ -54,7 +54,7 @@ description: Consulting, deployment, and support services for bioAF from the per
     <div class="service-card">
       <div class="service-icon">&#x1f9e9;</div>
       <h2>Custom Feature Development</h2>
-      <p>Have a workflow or analysis type that bioAF doesn't support out of the box? I can build it — and where appropriate, contribute it back to the open source project.</p>
+      <p>Have a workflow or analysis type that bioAF doesn't support out of the box? I can build it, and where appropriate, contribute it back to the open source project.</p>
       <ul>
         <li>Custom pipeline catalog entries</li>
         <li>New data types and visualizations</li>
@@ -91,7 +91,7 @@ description: Consulting, deployment, and support services for bioAF from the per
 
   <div class="services-cta">
     <h2>Ready to talk?</h2>
-    <p>Every engagement starts with a conversation. Reach out and tell me what you're working on — I'll let you know if and how I can help.</p>
+    <p>Every engagement starts with a conversation. Reach out and tell me what you're working on, I'll let you know if and how I can help.</p>
     <a href="mailto:hello@bioaf.co" class="btn btn-primary">hello@bioaf.co</a>
   </div>
 

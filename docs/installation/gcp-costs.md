@@ -28,7 +28,6 @@ These are enabled through the bioAF UI as your team needs them. Each shows a cos
 | RStudio Server | Interactive R sessions | Usage-based; charged per session hour |
 | cellxgene | Single-cell data visualization | Usage-based |
 | Meilisearch | Full-text search across the platform | Usage-based |
-| SLURM cluster | HPC-style batch compute (coming soon) | Usage-based; autoscales to zero when idle |
 
 ## Cost-saving features
 
@@ -40,7 +39,7 @@ These are enabled through the bioAF UI as your team needs them. Each shows a cos
 
 ## Controlling costs
 
-1. **Disable what you're not using** — Components can be toggled off at any time
-2. **Set budget alerts** — bioAF will notify you when spending approaches your threshold
-3. **Use idle timeouts** — Notebook sessions automatically shut down when not in use
-4. **Review the Cost Center regularly** — The dashboard shows trends and projections
+1. **Disable what you're not using**: components can be toggled off at any time
+2. **Set budget alerts**: bioAF will notify you when spending approaches your threshold
+3. **Use idle timeouts**: notebook sessions automatically shut down when not in use
+4. **Review the Cost Center regularly**: the dashboard shows trends and projections

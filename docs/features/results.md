@@ -4,11 +4,11 @@ title: Results & Visualization
 description: Explore your data with cellxgene, QC dashboards, and a searchable plot archive.
 ---
 
-bioAF provides multiple ways to explore and share your analysis results — from interactive single-cell viewers to publication-ready QC reports.
+bioAF provides multiple ways to explore and share your analysis results, from interactive single-cell viewers to publication-ready QC reports.
 
 ## cellxgene
 
-For single-cell datasets, bioAF integrates [cellxgene](https://chanzuckerberg.github.io/cellxgene/) — an interactive explorer that lets you:
+For single-cell datasets, bioAF integrates [cellxgene](https://chanzuckerberg.github.io/cellxgene/), an interactive explorer that lets you:
 
 - Visualize UMAP and t-SNE embeddings
 - Color cells by gene expression, cluster assignment, or sample metadata
@@ -17,7 +17,7 @@ For single-cell datasets, bioAF integrates [cellxgene](https://chanzuckerberg.gi
 
 <img src="{{ '/assets/images/screenshot-cellxgene-discover.png' | relative_url }}" alt="CellxGene Discover showing UMAP embedding with cells colored by cluster, gene expression sidebar, and metadata panel" class="screenshot-img">
 
-No installation needed — cellxgene runs as part of the platform and opens directly in your browser.
+No installation needed, cellxgene runs as part of the platform and opens directly in your browser.
 
 ## QC dashboards
 

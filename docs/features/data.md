@@ -28,7 +28,7 @@ bioAF organizes data across four storage tiers that map to the research workflow
 | **Working** | Intermediate pipeline outputs | 30 days (configurable) |
 | **Results** | Final outputs (h5ad, plots, QC reports) | Permanent |
 
-{% include info-bubble.html title="Where is my data stored?" content="All data is stored in Google Cloud Storage (GCS) buckets in your own GCP project. You have full ownership and access — bioAF organizes and manages the data but never moves it outside your project." %}
+{% include info-bubble.html title="Where is my data stored?" content="All data is stored in Google Cloud Storage (GCS) buckets in your own GCP project. You have full ownership and access, bioAF organizes and manages the data but never moves it outside your project." %}
 
 ## Auto-ingest
 

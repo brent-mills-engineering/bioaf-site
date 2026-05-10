@@ -4,7 +4,7 @@ title: Guide for PIs & Lab Managers
 description: How to track team progress, monitor costs, and manage your bioAF platform.
 ---
 
-This guide covers what PIs, lab managers, and team leads need from bioAF — visibility into team activity, cost oversight, and audit compliance.
+This guide covers what PIs, lab managers, and team leads need from bioAF, visibility into team activity, cost oversight, and audit compliance.
 
 ## The dashboard
 
@@ -37,10 +37,10 @@ You can filter by team member, experiment, or date range.
 Navigate to **Admin > Cost Center** for a complete view of your cloud spending:
 
 - **Total spend** this billing period
-- **Per-component breakdown** — see exactly what's driving costs (compute, storage, database, etc.)
-- **Per-project costs** — track spending by experiment or project
-- **Trend charts** — spending over time with projections
-- **Budget status** — how close you are to your set threshold
+- **Per-component breakdown**: see exactly what's driving costs (compute, storage, database, etc.)
+- **Per-project costs**: track spending by experiment or project
+- **Trend charts**: spending over time with projections
+- **Budget status**: how close you are to your set threshold
 
 <img src="{{ '/assets/images/screenshot-cost-center.png' | relative_url }}" alt="Cost Center showing spending breakdown by component, trend chart, and budget indicator" class="screenshot-img">
 
@@ -51,15 +51,15 @@ Navigate to **Admin > Cost Center** for a complete view of your cloud spending:
 3. Choose notification channels (email, Slack, in-app)
 4. bioAF alerts you when spending reaches 50%, 80%, and 100% of your budget
 
-{% include info-bubble.html title="Where do these costs come from?" content="bioAF runs on your Google Cloud project. The costs shown in the Cost Center are pulled directly from your GCP billing data — they're the same numbers you'd see in the Google Cloud console, but organized by bioAF component so you can see what's driving spend." %}
+{% include info-bubble.html title="Where do these costs come from?" content="bioAF runs on your Google Cloud project. The costs shown in the Cost Center are pulled directly from your GCP billing data, they're the same numbers you'd see in the Google Cloud console, but organized by bioAF component so you can see what's driving spend." %}
 
 ## Using the audit log
 
 The **Audit Log** provides an immutable record of every action taken on the platform. This is critical for:
 
-- **Publication provenance** — trace any result back to the exact experiment, samples, pipeline version, and parameters that produced it
-- **Regulatory compliance** — demonstrate a complete chain of custody for your data
-- **Troubleshooting** — see exactly what happened and when
+- **Publication provenance**: trace any result back to the exact experiment, samples, pipeline version, and parameters that produced it
+- **Regulatory compliance**: demonstrate a complete chain of custody for your data
+- **Troubleshooting**: see exactly what happened and when
 
 <img src="{{ '/assets/images/screenshot-audit-log.png' | relative_url }}" alt="Audit log showing filterable list of events with user, action, resource, and timestamp" class="screenshot-img">
 

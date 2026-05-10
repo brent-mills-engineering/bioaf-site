@@ -34,15 +34,15 @@ Yes. bioAF provisions resources in whatever GCP project you point it at. It won'
 
 ### Can I run bioAF on my laptop?
 
-No. bioAF must be deployed on a Google Cloud virtual machine — it will not work on a local machine (Mac, Windows, or Linux desktop). Follow the [Getting Started]({{ '/docs/' | relative_url }}) guide to set up a VM first.
+No. bioAF must be deployed on a Google Cloud virtual machine, it will not work on a local machine (Mac, Windows, or Linux desktop). Follow the [Getting Started]({{ '/docs/' | relative_url }}) guide to set up a VM first.
 
 ### What are the hardware requirements?
 
-bioAF runs on a GCP VM (`e2-medium` or larger). The actual pipeline compute happens on GCP as well, so you don't need a powerful local machine — just a browser, a terminal, and an SSH client.
+bioAF runs on a GCP VM (`e2-medium` or larger). The actual pipeline compute happens on GCP as well, so you don't need a powerful local machine, just a browser, a terminal, and an SSH client.
 
 ### How much does the GCP infrastructure cost?
 
-Costs are usage-based — an idle platform costs very little, and costs scale with pipeline runs, notebook sessions, and data stored. See [What to Expect on Your GCP Bill]({{ '/docs/installation/gcp-costs/' | relative_url }}) for a full breakdown.
+Costs are usage-based, an idle platform costs very little, and costs scale with pipeline runs, notebook sessions, and data stored. See [What to Expect on Your GCP Bill]({{ '/docs/installation/gcp-costs/' | relative_url }}) for a full breakdown.
 
 ## Data & Security
 
@@ -62,11 +62,11 @@ Yes. bioAF backs up across four tiers: PostgreSQL snapshots (`pg_dump` to GCS wi
 
 ### What pipelines come pre-installed?
 
-bioAF ships with nf-core pipelines including scrnaseq, rnaseq, and atacseq. You can add custom Nextflow or Snakemake workflows through the pipeline catalog.
+bioAF ships with nf-core pipelines including scrnaseq, rnaseq, and atacseq. You can add custom Nextflow workflows through the pipeline catalog.
 
 ### Can I add my own pipelines?
 
-Yes. Provide a Git repository URL with your Nextflow or Snakemake workflow, and bioAF will add it to the catalog with configurable parameters and resource defaults.
+Yes. Provide a Git repository URL with your Nextflow workflow, and bioAF will add it to the catalog with configurable parameters and resource defaults.
 
 ### Can I use my own Docker images for notebooks?
 

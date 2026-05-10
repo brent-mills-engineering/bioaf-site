@@ -9,7 +9,7 @@ This is the fastest path to a running bioAF. If you'd rather click through the G
 ## What you'll have when you're done
 
 - A web-based control plane for your entire comp bio workflow
-- Pipeline execution (Nextflow, Snakemake) with a built-in catalog
+- Pipeline execution (Nextflow, nf-core, and custom pipelines) with a built-in catalog
 - Notebook sessions (JupyterHub, RStudio) with versioned environments
 - Structured experiment and sample tracking
 - Interactive results visualization (cellxgene, QC dashboards)
@@ -98,7 +98,7 @@ When it finishes, the console prints:
 - The URL of the setup wizard (typically `https://<your-vm-ip>/setup`)
 - A **one-time setup code** that expires in one hour
 
-Keep both visible — you'll use them in the web UI next.
+Keep both visible, you'll use them in the web UI next.
 
 ---
 
@@ -130,11 +130,11 @@ bioAF's components (GKE, Cloud SQL, GCS buckets, JupyterHub, cellxgene, etc.) ar
 
 For a typical scRNA-seq team, a good starting set is:
 
-- **GKE cluster** — required for pipelines and notebooks
-- **Cloud SQL** — required for the database
-- **GCS buckets** — required for data storage
-- **JupyterHub** or **RStudio** — for interactive analysis
-- **cellxgene** — for single-cell visualization
+- **GKE cluster**: required for pipelines and notebooks
+- **Cloud SQL**: required for the database
+- **GCS buckets**: required for data storage
+- **JupyterHub** or **RStudio**, for interactive analysis
+- **cellxgene**: for single-cell visualization
 
 Skip this step if you just want to explore the UI first. You can enable components any time from **Admin > Component Settings**.
 
@@ -142,7 +142,7 @@ Skip this step if you just want to explore the UI first. You can enable componen
 
 ## Next steps
 
-- **[Post-Setup]({{ '/docs/installation/post-setup/' | relative_url }})** — Invite your team and fine-tune notifications
-- **[For Bench Scientists]({{ '/docs/user-guides/bench-scientists/' | relative_url }})** — Register experiments, upload data, view results
-- **[For Bioinformaticians]({{ '/docs/user-guides/bioinformaticians/' | relative_url }})** — Run pipelines, launch notebooks, manage environments
-- **[For PIs & Lab Managers]({{ '/docs/user-guides/pis-and-lab-managers/' | relative_url }})** — Track progress, monitor costs, review audits
+- **[Post-Setup]({{ '/docs/installation/post-setup/' | relative_url }})**: Invite your team and fine-tune notifications
+- **[For Bench Scientists]({{ '/docs/user-guides/bench-scientists/' | relative_url }})**: Register experiments, upload data, view results
+- **[For Bioinformaticians]({{ '/docs/user-guides/bioinformaticians/' | relative_url }})**: Run pipelines, launch notebooks, manage environments
+- **[For PIs & Lab Managers]({{ '/docs/user-guides/pis-and-lab-managers/' | relative_url }})**: Track progress, monitor costs, review audits

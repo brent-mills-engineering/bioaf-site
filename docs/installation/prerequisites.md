@@ -17,7 +17,7 @@ Google Cloud organizes resources into **projects**. bioAF is deployed into one p
 1. Go to [cloud.google.com](https://cloud.google.com) and click **Get started for free** (or sign in if you already have an account). New accounts get a free trial credit.
 2. In the [GCP Console](https://console.cloud.google.com), open the project dropdown at the top → **New Project** → name it (e.g., `bioaf-prod`) and click **Create**.
 
-Write down the **Project ID** (e.g., `bioaf-prod-123456`) — both install paths will ask for it.
+Write down the **Project ID** (e.g., `bioaf-prod-123456`), both install paths will ask for it.
 
 ## 3. A billing account
 
@@ -34,5 +34,5 @@ Link the billing account to the project you created in step 2.
 
 Once you have all three, head back to the install path you picked:
 
-- **[Quick Start]({{ '/docs/' | relative_url }})** — scripted installer (macOS / Linux)
-- **[Setup & Deploy]({{ '/docs/installation/setup/' | relative_url }})** — manual install
+- **[Quick Start]({{ '/docs/' | relative_url }})**: scripted installer (macOS / Linux)
+- **[Setup & Deploy]({{ '/docs/installation/setup/' | relative_url }})**: manual install

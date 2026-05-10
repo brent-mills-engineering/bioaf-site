@@ -26,7 +26,7 @@ The **Component Settings** page shows every available platform component:
 5. Review and confirm
 6. Watch the provisioning progress in real time
 
-{% include info-bubble.html title="What's an infrastructure plan?" content="When you enable a component, bioAF creates a plan describing exactly what cloud resources it needs to create — servers, databases, storage, networking rules. You see this plan before anything is created, including cost estimates. This uses a technology called Terraform, which is an industry-standard tool for managing cloud infrastructure safely and predictably." %}
+{% include info-bubble.html title="What's an infrastructure plan?" content="When you enable a component, bioAF creates a plan describing exactly what cloud resources it needs to create, servers, databases, storage, networking rules. You see this plan before anything is created, including cost estimates. This uses a technology called Terraform, which is an industry-standard tool for managing cloud infrastructure safely and predictably." %}
 
 ## Disabling a component
 

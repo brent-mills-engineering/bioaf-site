@@ -4,7 +4,7 @@ title: The bioaf Script
 description: Reference guide for all bioaf management script commands.
 ---
 
-The `bioaf` script is the primary tool for managing your bioAF installation. It handles everything from first-time setup to day-to-day operations — starting and stopping services, running database migrations, creating backups, and more.
+The `bioaf` script is the primary tool for managing your bioAF installation. It handles everything from first-time setup to day-to-day operations, starting and stopping services, running database migrations, creating backups, and more.
 
 All commands are run from the root of your bioAF installation:
 
@@ -22,7 +22,7 @@ All commands are run from the root of your bioAF installation:
 ./bioaf setup
 ```
 
-The first-time setup command. It's idempotent — safe to re-run. It:
+The first-time setup command. It's idempotent, safe to re-run. It:
 
 - Checks prerequisites (Docker, Git, Docker Compose)
 - Generates a secure `docker/.env` file if one doesn't exist
@@ -76,7 +76,7 @@ Stops all services, then starts them again. Equivalent to running `stop` followe
 ./bioaf status
 ```
 
-Shows the current state of each service — running, stopped, or unknown.
+Shows the current state of each service, running, stopped, or unknown.
 
 ### `logs`
 
@@ -119,7 +119,7 @@ Builds (or rebuilds) container images. Run this after pulling updates or modifyi
 ./bioaf migrate
 ```
 
-Runs any pending database migrations. Safe to run multiple times — already-applied migrations are skipped. Run this after updating bioAF to apply schema changes.
+Runs any pending database migrations. Safe to run multiple times, already-applied migrations are skipped. Run this after updating bioAF to apply schema changes.
 
 ### `migrate-down`
 
@@ -191,7 +191,7 @@ Opens a direct `psql` session to the database. Useful for inspecting data or run
 ./bioaf register-outputs --force
 ```
 
-Scans GCS for pipeline output files and registers them in the database. Normally this happens automatically when a pipeline completes — use this command if outputs are missing from the UI or if a pipeline completed without registering its results.
+Scans GCS for pipeline output files and registers them in the database. Normally this happens automatically when a pipeline completes, use this command if outputs are missing from the UI or if a pipeline completed without registering its results.
 
 | Option | Description |
 |--------|-------------|

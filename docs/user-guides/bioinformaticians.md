@@ -4,7 +4,7 @@ title: Guide for Bioinformaticians
 description: How to run pipelines, launch notebooks, and manage environments in bioAF.
 ---
 
-This guide covers the computational biologist workflow in bioAF — running pipelines, working in notebooks, and managing compute environments.
+This guide covers the computational biologist workflow in bioAF, running pipelines, working in notebooks, and managing compute environments.
 
 ## Browsing and launching pipelines
 
@@ -12,9 +12,9 @@ This guide covers the computational biologist workflow in bioAF — running pipe
 
 Navigate to **Pipelines** to see the available workflows. bioAF ships with nf-core pipelines pre-configured:
 
-- **nf-core/scrnaseq** — Single-cell RNA-seq (10x Chromium, Smart-seq2, etc.)
-- **nf-core/rnaseq** — Bulk RNA-seq
-- **nf-core/atacseq** — ATAC-seq
+- **nf-core/scrnaseq**: Single-cell RNA-seq (10x Chromium, Smart-seq2, etc.)
+- **nf-core/rnaseq**: Bulk RNA-seq
+- **nf-core/atacseq**: ATAC-seq
 - And more, with the ability to add custom pipelines
 
 <img src="{{ '/assets/images/screenshot-pipeline-catalog.png' | relative_url }}" alt="Pipeline catalog showing available workflows with descriptions" class="screenshot-img">
@@ -29,7 +29,7 @@ Navigate to **Pipelines** to see the available workflows. bioAF ships with nf-co
 
 <img src="{{ '/assets/images/screenshot-pipeline-launch-wizard.png' | relative_url }}" alt="Pipeline launch form with experiment selection, parameter overrides, and resource settings" class="screenshot-img">
 
-{% include info-bubble.html title="What are Nextflow and Snakemake?" content="Nextflow and Snakemake are workflow managers — tools that break a complex analysis into steps, run them in the right order, and handle parallelism and error recovery. bioAF manages them for you, so you just pick your pipeline, select your data, and hit launch." %}
+{% include info-bubble.html title="What is Nextflow?" content="Nextflow is a workflow manager: a tool that breaks a complex analysis into steps, runs them in the right order, and handles parallelism and error recovery. nf-core is a community library of curated, peer-reviewed Nextflow pipelines. bioAF manages both for you, so you just pick your pipeline, select your data, and hit launch." %}
 
 ### Monitoring pipeline runs
 
@@ -49,8 +49,8 @@ Once launched, you can track progress from the **Runs** page:
 1. Navigate to **Notebook Sessions**
 2. Click **New Session**
 3. Choose your environment:
-   - **JupyterHub** — For Python-based analysis
-   - **RStudio** — For R-based analysis
+   - **JupyterHub**: For Python-based analysis
+   - **RStudio**: For R-based analysis
 4. Select a versioned environment (or use the default)
 5. Set resource limits and click **Launch**
 
@@ -60,7 +60,7 @@ Your session starts in about a minute. Click **Open** to connect directly in you
 
 <img src="{{ '/assets/images/screenshot-notebook-session.png' | relative_url }}" alt="Active notebook session with JupyterHub open in browser" class="screenshot-img">
 
-Sessions automatically stop after a configurable idle period to manage costs. Your work is saved — you can restart and pick up where you left off.
+Sessions automatically stop after a configurable idle period to manage costs. Your work is saved, you can restart and pick up where you left off.
 
 ### SSH access
 
@@ -70,7 +70,7 @@ For tasks that need a terminal, click the **Terminal** button on any running ses
 
 ### What are environments?
 
-Environments define the software available in your notebook sessions and pipeline runs — Python/R packages, system libraries, and tools. bioAF versions every environment so your analyses are reproducible.
+Environments define the software available in your notebook sessions and pipeline runs, Python/R packages, system libraries, and tools. bioAF versions every environment so your analyses are reproducible.
 
 ### Creating an environment
 
@@ -85,7 +85,7 @@ bioAF builds the environment image and makes it available for notebook sessions.
 
 <img src="{{ '/assets/images/screenshot-environment-version-docker-conda.png' | relative_url }}" alt="Environment Dockerfile and conda spec options" class="screenshot-img">
 
-{% include info-bubble.html title="What is a Dockerfile?" content="A Dockerfile is a recipe that lists the software to install in an environment — think of it as a shopping list for your analysis tools. If you're more comfortable with conda, you can upload a conda `environment.yml` file instead." %}
+{% include info-bubble.html title="What is a Dockerfile?" content="A Dockerfile is a recipe that lists the software to install in an environment, think of it as a shopping list for your analysis tools. If you're more comfortable with conda, you can upload a conda `environment.yml` file instead." %}
 
 ### Versioning
 
@@ -106,7 +106,7 @@ The **Data & Files** section lets you:
 
 ## Adding custom pipelines
 
-If you have your own Nextflow or Snakemake workflows, you can add them to the pipeline catalog. Navigate to **Pipelines > Add Pipeline** and provide:
+If you have your own Nextflow workflows, you can add them to the pipeline catalog. Navigate to **Pipelines > Add Pipeline** and provide:
 
 - Pipeline name and description
 - Git repository URL
