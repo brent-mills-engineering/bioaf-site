@@ -8,11 +8,14 @@ description: bioAF is a free, open source platform that gives small biotech team
 <!-- Hero -->
 <section class="hero">
   <div class="hero-inner">
-    <h1>Computational biology infrastructure<br>in minutes, not months</h1>
+    <span class="hero-pill">
+      <span class="hero-pill-dot"></span>
+      Free and open source.
+    </span>
+    <h1>Computational biology infrastructure<br><span class="grad">in minutes, not months.</span></h1>
     <p class="subtitle">
-      bioAF is a free, open source platform that gives small biotech startups
-      production-grade pipelines, notebooks, and experiment tracking on day one.
-      No infrastructure team or computational core required.
+      bioAF gives small biotech teams production-grade pipelines, notebooks, and
+      experiment tracking on day one. No DevOps engineer required.
     </p>
     <div class="hero-cta">
       <a href="{{ '/docs/' | relative_url }}" class="btn btn-primary">Get Started</a>
@@ -20,35 +23,51 @@ description: bioAF is a free, open source platform that gives small biotech team
     </div>
   </div>
   <div class="section-inner">
-    <div class="hero-image">
-      <img src="{{ '/assets/images/screenshot-dashboard.png' | relative_url }}" alt="bioAF dashboard showing active runs, notebook sessions, and recent activity" class="screenshot-img">
+    <div class="hero-stack">
+      <div class="terminal" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-title">~/bioaf</span>
+        </div>
+        <div class="terminal-body">
+          <span class="term-line l1"><span class="prompt">$</span> <span class="cmd">./install-gcp.sh</span></span>
+          <span class="term-line l2"><span class="out">  provisioning vm, firewall, service account...</span></span>
+          <span class="term-line l3"><span class="out">  building containers, running migrations...</span></span>
+          <span class="term-line l4"><span class="ok">  &check; ready</span><span class="out"> at https://34.122.18.91</span><span class="term-cursor"></span></span>
+        </div>
+      </div>
+      <div class="hero-stack-screenshot">
+        <img src="{{ '/assets/images/screenshot-dashboard.png' | relative_url }}" alt="bioAF dashboard showing active runs, notebook sessions, and recent activity">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- The Problem -->
+<!-- Install proof -->
 <section class="section">
   <div class="section-inner">
     <div class="section-header">
-      <h2>Infrastructure shouldn't be the bottleneck</h2>
-      <p>Small biotech teams lose months to problems that have nothing to do with science.</p>
+      <span class="section-eyebrow">From zero to platform</span>
+      <h2>One command. One working platform.</h2>
+      <p>What used to take a quarter of DevOps work runs in the time it takes to grab coffee. No compute team, no install guide, no babysitting.</p>
     </div>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <div class="card-icon">&#x1f465;</div>
-        <h3>The DIY Trap</h3>
-        <p>Your bioinformatician is running pipelines in Google Colab and storing results on their laptop. It works until they leave, or the laptop dies, or you need to reproduce last quarter's analysis.</p>
+    <div class="install-single">
+      <div class="install-single-cmd">
+        <div class="install-single-label">Run on your laptop</div>
+        <div class="install-box">
+          <code id="install-cmd-home">bash &lt;(curl -fsSL https://raw.githubusercontent.com/bioAF/bioAF/main/install-gcp.sh)</code>
+          <button type="button" class="install-copy" data-copy-target="install-cmd-home" aria-label="Copy install command">Copy</button>
+        </div>
+        <p class="install-single-foot">Choose public or private IP. Paste the one-time setup code into the URL it prints to claim your admin account.</p>
       </div>
-      <div class="problem-card">
-        <div class="card-icon">&#x23f3;</div>
-        <h3>The Time Cost</h3>
-        <p>Setting up compute infrastructure from scratch takes 2&ndash;6 months. That's half a year before your first pipeline run.</p>
-      </div>
-      <div class="problem-card">
-        <div class="card-icon">&#x1f50d;</div>
-        <h3>The Metadata Gap</h3>
-        <p>Results live in one place, sample metadata in another, and the connection between them exists only in someone's head.</p>
-      </div>
+      <ul class="install-single-list">
+        <li><strong>Provisions GCP:</strong> VM, firewall, and a service account scoped to your project.</li>
+        <li><strong>Builds the stack:</strong> containers, dependencies, and environment configuration.</li>
+        <li><strong>Runs migrations:</strong> PostgreSQL schema and seed data ready for the first sign-in.</li>
+        <li><strong>Brings up every service:</strong> web UI, API, workers, JupyterHub, RStudio, and the pipeline runner.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -187,8 +206,8 @@ description: bioAF is a free, open source platform that gives small biotech team
       <div class="workflow-step">
         <div class="step-number">1</div>
         <h3>Deploy</h3>
-        <p>Run one command on your desktop to provision a GCP VM, then one command on the VM to install bioAF. Paste the one-time setup code it prints into the web UI to create your admin account.</p>
-        {% include info-bubble.html title="What happens under the hood?" content="The desktop installer sets up the gcloud CLI, creates a VM, firewall rules, and service account. Then <code>./bioaf setup</code> on the VM builds the containers, runs migrations, starts the services, and prints a one-time setup code that proves you have admin access to the instance." %}
+        <p>Run one command on your laptop. It provisions GCP, builds the stack, brings up every service, and prints a URL with a one-time setup code so you can claim your admin account.</p>
+        {% include info-bubble.html title="What happens under the hood?" content="<code>./install-gcp.sh</code> sets up the gcloud CLI, creates the VM, firewall rules, and service account, then builds the containers, runs migrations, starts the services, and prints a one-time setup code that proves you have admin access. You choose whether the VM uses a public or private IP." %}
       </div>
       <div class="workflow-step">
         <div class="step-number">2</div>
