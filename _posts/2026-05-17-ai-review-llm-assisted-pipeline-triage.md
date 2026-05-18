@@ -4,15 +4,15 @@ description: "Hosted LLM reviews of completed pipeline runs and experiment-wide 
 thumbnail: /assets/images/bioaf-llm-integration.png
 ---
 
-![Agent Review](/assets/images/bioaf-llm-integration.png)
+![AI Review](/assets/images/bioaf-llm-integration.png)
 
 Reviewing pipeline outputs by hand is one of the slower steps in a comp-bio workflow. Open the QC dashboard, scan the metrics, cross-reference the sample sheet, remember what a "good" mito percentage looked like for this organism on this protocol, decide if the run is usable. Do that across an experiment with eight runs and the loop takes a real chunk of the week.
 
-So in the latest release we shipped **Agent Review**: a hosted LLM advisory layer that sits next to a Pipeline Run or an Experiment and produces severity-coded notes about what looks normal, what looks off, and what is worth a second look. It's optional, opt-in per provider, and never enters the data provenance that makes up your scientific record.
+So in the latest release we shipped **AI Review**: a hosted LLM advisory layer that sits next to a Pipeline Run or an Experiment and produces severity-coded notes about what looks normal, what looks off, and what is worth a second look. It's optional, opt-in per provider, and never enters the data provenance that makes up your scientific record.
 
 ## Three providers, one active at a time
 
-Agent Review supports three AI providers today: **OpenAI ChatGPT**, **Anthropic Claude**, and **Google Gemini**. An admin opens **Settings > Integrations > LLMs**, pastes an API key for each provider they want available, picks which model to use from a list, and clicks **Set active** on exactly one of them.
+AI Review supports three AI providers today: **OpenAI ChatGPT**, **Anthropic Claude**, and **Google Gemini**. An admin opens **Settings > Integrations > LLMs**, pastes an API key for each provider they want available, picks which model to use from a list, and clicks **Set active** on exactly one of them.
 
 A few details worth knowing:
 
@@ -38,7 +38,7 @@ Out of the box, both reviews load a prompt builder that lets you choose from a w
 
 ![Section builder for an AI review](/assets/images/screenshot-ai-review-prompt-builder.png)
 
-If you set up Agent Review last week and want today's review to ask about something specific that the catalog doesn't cover, the one-off custom prompt covers it. If your lab keeps coming back to the same question, save it once.
+If you set up AI Review last week and want today's review to ask about something specific that the catalog doesn't cover, the one-off custom prompt covers it. If your lab keeps coming back to the same question, save it once.
 
 ![Customizing an AI review prompt](/assets/images/screenshot-ai-review-custom-prompt.png)
 
@@ -68,7 +68,7 @@ When you run an experiment-wide review and someone later adds a new pipeline run
 
 ## Data Privacy
 
-Agent Review only sends a structured Markdown summary that bioAF builds for each review. The summary is assembled from your database and every file is strictly controlled. 
+AI Review only sends a structured Markdown summary that bioAF builds for each review. The summary is assembled from your database and every file is strictly controlled. 
 
 For a single pipeline run, the summary contains:
 
@@ -100,7 +100,7 @@ Every meaningful action is recorded so you can answer questions about it later:
 
 If your compliance team ever asks "did we ever send sample S-123 to a third-party AI?", the activity log answers it directly.
 
-## What Agent Review is not
+## What AI Review is not
 
 A few things the surface deliberately doesn't do, so you can plan around them:
 
@@ -114,6 +114,6 @@ A few things the surface deliberately doesn't do, so you can plan around them:
 
 The settings page is under **Settings > Integrations > LLMs**. The review buttons appear on the Pipeline Run details page once the run has finished, and on the Experiment details page at any time. The AI Review tab on both pages is visible to anyone who can already view the run or experiment. Only users with the AI review permission can start new reviews.
 
-If you're rolling Agent Review out for the first time, the shortest path is: get an API key from one provider, activate it from the settings page, run an AI review against a completed run you already know the answer for, and use that to figure out which options give you the most useful advisories for your lab's workflow. Save the prompt configurations that work, and ignore the ones that don't.
+If you're rolling AI Review out for the first time, the shortest path is: get an API key from one provider, activate it from the settings page, run an AI review against a completed run you already know the answer for, and use that to figure out which options give you the most useful advisories for your lab's workflow. Save the prompt configurations that work, and ignore the ones that don't.
 
 The AI's output is a research-assistant note, not part of the scientific record. Used that way, it removes a real chunk of the manual scan time without changing how the science is recorded.

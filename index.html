@@ -72,6 +72,29 @@ description: bioAF is a free, open source platform that gives small biotech team
   </div>
 </section>
 
+<!-- New Integrations -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Just shipped</span>
+      <h2>Talk to the systems you already run.</h2>
+      <p>Two new integrations connect bioAF to the rest of your lab's stack, the LIMS that already holds your records, and the AI provider you already pay for.</p>
+    </div>
+    <div class="feature-grid feature-grid-two">
+      <a href="{{ '/docs/features/integration-api/' | relative_url }}" class="feature-tile">
+        <span class="feature-tile-badge">New</span>
+        <h3>LIMS Integration API</h3>
+        <p>A public, key-authenticated REST surface at <code>/api/v1/integrations</code>. Push projects, experiments, and samples in from Benchling, LabKey, or your in-house LIMS. Read them back. React to changes with signed outbound webhooks.</p>
+      </a>
+      <a href="{{ '/docs/features/ai-review/' | relative_url }}" class="feature-tile">
+        <span class="feature-tile-badge">New</span>
+        <h3>AI Review</h3>
+        <p>Hosted LLM reviews of completed pipeline runs and whole experiments. Bring your own key for Claude, ChatGPT, or Gemini. Severity-coded cards flag what looks off, with full audit logging of what was sent.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Built to Last + Technology -->
 <section class="section section-alt">
   <div class="section-inner">
@@ -268,6 +291,14 @@ description: bioAF is a free, open source platform that gives small biotech team
       <a href="{{ '/docs/features/infrastructure/' | relative_url }}" class="feature-tile">
         <h3>Infrastructure Management</h3>
         <p>Enable or disable platform components from the UI. See cost estimates before you provision anything.</p>
+      </a>
+      <a href="{{ '/docs/features/integration-api/' | relative_url }}" class="feature-tile">
+        <h3>LIMS Integration API</h3>
+        <p>A public, key-authenticated REST surface plus signed outbound webhooks. Sync projects, experiments, and samples with your existing lab systems.</p>
+      </a>
+      <a href="{{ '/docs/features/ai-review/' | relative_url }}" class="feature-tile">
+        <h3>AI Review</h3>
+        <p>Bring your own Claude, ChatGPT, or Gemini key. Get severity-coded LLM reviews of pipeline runs and full experiments, with complete audit logging.</p>
       </a>
       <a class="feature-tile">
         <h3>Auto-Ingest</h3>

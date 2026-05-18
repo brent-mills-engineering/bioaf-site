@@ -15,6 +15,36 @@ description: A complete platform for computational biology, from sample registra
   <div class="features-grid">
 
     <div class="feature-page-card">
+      <div class="feature-page-icon">&#x1f50c;</div>
+      <h2>LIMS Integration API</h2>
+      <p class="feature-page-tagline">A public, key-authenticated REST surface so your LIMS and other lab systems read and write bioAF records without scraping the UI.</p>
+      <ul>
+        <li>Projects, experiments, samples, and file metadata at <code>/api/v1/integrations/*</code></li>
+        <li>Service accounts with role-scoped API keys, minted from the admin UI</li>
+        <li>Look up records by your own LIMS-side IDs via <code>external_id</code></li>
+        <li>Idempotency keys on writes so retries never duplicate records</li>
+        <li>Signed outbound webhooks for experiment, sample, and file events with retries and a dead-letter queue</li>
+        <li>Authoritative OpenAPI schema served by every instance at <code>/api/v1/integrations/openapi.json</code></li>
+      </ul>
+      <a href="{{ '/docs/features/integration-api/' | relative_url }}" class="feature-page-link">Deep dive &rarr;</a>
+    </div>
+
+    <div class="feature-page-card">
+      <div class="feature-page-icon">&#x1f916;</div>
+      <h2>AI Review</h2>
+      <p class="feature-page-tagline">Optional, opt-in LLM advisories on completed pipeline runs and full experiments. Bring your own API key.</p>
+      <ul>
+        <li>Three providers supported: Anthropic Claude, OpenAI ChatGPT, and Google Gemini</li>
+        <li>Per-org admin chooses one active provider and model; switching is one click</li>
+        <li>Severity-coded cards (red, orange, green) on a new AI Review tab</li>
+        <li>Section-based prompt builder, with org-wide saved prompts for repeated questions</li>
+        <li>Experiment-wide reviews stale-mark themselves when a new run is added</li>
+        <li>Never sends raw reads, file bytes, or pipeline logs. Every invocation is audit-logged</li>
+      </ul>
+      <a href="{{ '/docs/features/ai-review/' | relative_url }}" class="feature-page-link">Deep dive &rarr;</a>
+    </div>
+
+    <div class="feature-page-card">
       <div class="feature-page-icon">&#x1f9ec;</div>
       <h2>Experiment Management</h2>
       <p class="feature-page-tagline">Track experiments from bench to publication with structured, standards-compliant metadata.</p>
