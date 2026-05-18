@@ -1,6 +1,6 @@
 ---
 title: "Connecting your LIMS with the bioAF Integration API"
-description: "A public, key-authenticated API plus signed webhooks so your LIMS and other lab systems can read and write projects, experiments, and samples without manual re-keying."
+description: "A public API lets your LIMS and other lab systems read and write projects, experiments, and samples without manual clicks."
 thumbnail: /assets/images/bioaf-lims-integration.png
 ---
 
