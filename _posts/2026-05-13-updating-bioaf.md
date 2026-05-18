@@ -1,7 +1,7 @@
 ---
 title: "Updating bioAF"
 description: "Check your version, see what's new, and install an update without leaving the web UI."
-thumbnail: /assets/images/screenshot-build.png
+thumbnail: /assets/images/bioaf-update.png
 ---
 
 {% include youtube.html id="ZFWEU05fqAw" title="Updating bioAF" %}
